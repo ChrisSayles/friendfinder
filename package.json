@@ -1,0 +1,24 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisSayles/friendfinder.git"
+  },
+  "author": "Chris Sayles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisSayles/friendfinder/issues"
+  },
+  "homepage": "https://github.com/ChrisSayles/friendfinder#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1"
+  }
+}
