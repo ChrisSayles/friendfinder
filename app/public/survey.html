@@ -208,7 +208,8 @@
                         </form>
                     </div>
                 </div>
-                <button class="btn btn-primary" style="width: 100%">Submit</button>
+                <button type="submit" class="btn btn-primary submit">Submit</button>
+
                 <br />
                 <br />
                 <footer class="footer">
@@ -216,8 +217,71 @@
                 </footer>
             </div>
         </div>
+    </div>
+
+    <div id="resultsModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title"><strong>Best Match</strong></h2>
+          </div>
+          <div class="modal-body">
+            <h2 id="matchName"></h2>
+            <img id="matchImg" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
 <script type="text/javascript">
+        $(".submit").on("click", function(){
+            //grabbing the form elements
+        var userAnswers = {
+            name: $('#name').val().trim(),
+            image: $('#link').val().trim(),
+            scores: [
+            $('#q1').val().trim(),
+            $('#q2').val().trim(),
+            $('#q3').val().trim(),
+            $('#q4').val().trim(),
+            $('#q5').val().trim(),
+            $('#q6').val().trim(),
+            $('#q7').val().trim(),
+            $('#q8').val().trim(),
+            $('#q9').val().trim(),
+            $('#q10').val().trim(),
+            ]
+        };
+        console.log("Here are your scores " + userAnswers.name + "" + userAnswers.image + "" + userAnswers.scores);
+        
+        var currentURL = window.location.origin;
+
+            // AJAX post the data to the friends API. 
+            $.post(currentURL + "/api/friends", userAnswers, function(data){
+
+                // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                $('#matchName').html(data.name);
+                $('#matchImg').attr("src", data.photo);
+
+                // Show the modal with the best match 
+                $("#resultsModal").modal('show');
+
+            });
+            
+        
+        return false;
+
+
+
+        });
+</script>
 
 </body>
 
