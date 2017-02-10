@@ -7,7 +7,21 @@ module.exports = function(app){
 		});
 
 	app.post('/api/friends', function(req, res){
+		 // var lowest_difference = 30;
+   //      var match;
+   //      friends.forEach(function(friend) {
+   //          for (var i = 0; i < 10; i++){
+   //              var difference = 0;
+   //              difference+= Math.abs(friend.answers[i] - req.body.answers[i]);
+   //              if (lowest_difference > difference){
+   //                  lowest_difference = difference;
+   //                  match = friend;
+   //              }
+ 
+   //          }
+   //      })
 		friends.push(req.body);
+		res.json(true);
 	});
 }
 
