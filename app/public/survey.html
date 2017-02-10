@@ -1,10 +1,12 @@
 <head>
     <title>Friend Finder</title>
+
+    <!--link to bootstrap and jquery-->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
-
+<!--Bootstrap theme container holding all of the questions for the user to answer-->
 <body>
     <div class="container">
         <div class="row">
@@ -218,10 +220,9 @@
             </div>
         </div>
     </div>
-
+    <!--Modal will pop up after user answers questions and will show match name and image-->
     <div id="resultsModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -239,10 +240,11 @@
 
       </div>
     </div>
-
+<!--Script-->
 <script type="text/javascript">
+//when submit button is clicked the following function will trigger
         $(".submit").on("click", function(){
-            //grabbing the form elements
+//var userAnswers stores the users name, image url, and scores
         var userAnswers = {
             name: $('#name').val().trim(),
             image: $('#link').val().trim(),
@@ -259,16 +261,19 @@
             $('#q10').val().trim(),
             ]
         };
+//console logging scores, users name, user image link
         console.log("Here are your scores " + userAnswers.name + "" + userAnswers.image + "" + userAnswers.scores);
-        
+//our current url location
         var currentURL = window.location.origin;
 
-            // AJAX post the data to the friends API. 
+// AJAX post the data to the friends API. 
             $.post(currentURL + "/api/friends", userAnswers, function(data){
 
                 // Grab the result from the AJAX post so that the best match's name and photo are displayed.
                 $('#matchName').html(data.name);
+                console.log(data.name);
                 $('#matchImg').attr("src", data.photo);
+                console.log(data.photo)
 
                 // Show the modal with the best match 
                 $("#resultsModal").modal('show');
@@ -281,6 +286,8 @@
 
 
         });
+
+
 </script>
 
 </body>

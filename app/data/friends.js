@@ -1,7 +1,7 @@
 var applicants = [
   {
   "name":"Nancy Botwin",
-  "photo":"http://vignette2.wikia.nocookie.net/weeds/images/d/dd/NancyBotwin.jpg/revision/latest?cb=20090911032312",
+  "photo":"http://hairstyles.thehairstyler.com/hairstyle_views/front_view_images/2308/original/Mary-Louise-Parker.jpg",
   "scores":[
      4,
      3,
@@ -16,7 +16,7 @@ var applicants = [
 },
 {
   "name":"Dahlia Malloy",
-  "photo":"https://s-media-cache-ak0.pinimg.com/originals/0c/1e/59/0c1e5914d84722c45e1fecdf59761df1.jpg",
+  "photo":"https://upload.wikimedia.org/wikipedia/commons/e/eb/Minnie_Driver_2010.jpg",
   "scores":[
      1,
      5,
@@ -31,7 +31,7 @@ var applicants = [
 },
 {
   "name":"Tommy Lee",
-  "photo":"http://wac.450f.edgecastcdn.net/80450F/1037theloon.com/files/2012/07/TOMMY.jpg",
+  "photo":"http://www.peta.org/wp-content/uploads/2013/10/2654.tommy-lee-final.jpg",
   "scores":[
      5,
      4,
