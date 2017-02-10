@@ -1,4 +1,4 @@
-//required modules
+//required modules to be used
 var path = require("path");
 var bodyParser = require('body-parser');
 //module.exports allows the information to be used by other files 
